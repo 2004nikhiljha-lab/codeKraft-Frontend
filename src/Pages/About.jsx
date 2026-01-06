@@ -45,8 +45,6 @@ const About = () => {
           <button className="about-btn">Work With Us</button>
         </div>
 
-         
-
         {/* RIGHT VISUAL */}
         <div className="about-visual">
           <div className="about-card">
@@ -62,7 +60,6 @@ const About = () => {
         </div>
 
       </div>
-      <div>
     </section>
   );
 };
