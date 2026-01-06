@@ -1,11 +1,11 @@
-/* Modern Navbar Styles - Matching CodeKraft Logo Colors */
-
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0;
@@ -14,9 +14,9 @@
   background: #1a2332;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   z-index: 1000;
-  transition: all 0.3s ease;
 }
 
+/* ===== CONTAINER ===== */
 .navbar-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -25,111 +25,59 @@
   align-items: center;
   justify-content: space-between;
   height: 85px;
-  gap: 2rem;
 }
 
-/* Logo Styles - Perfect Sizing for CodeKraft */
+/* ===== LOGO ===== */
 .navbar-logo {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
   z-index: 1001;
 }
 
-.navbar-logo a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.navbar-logo a:hover {
-  transform: scale(1.05);
-}
-
 .navbar-logo img {
-  height: 120px;
-  width: auto;
+  height: 110px;
   max-width: 200px;
   object-fit: contain;
-  display: block;
-  filter: brightness(1.1);
 }
 
-/* Menu Styles */
+/* ===== MENU ===== */
 .navbar-menu {
   display: flex;
   list-style: none;
   gap: 2.5rem;
   align-items: center;
-  margin: 0;
-  padding: 0;
-  flex: 1;
   justify-content: center;
+  flex: 1;
 }
 
-.navbar-item {
-  position: relative;
-}
-
+/* ===== LINKS ===== */
 .navbar-link {
   text-decoration: none;
   color: #e8eef5;
   font-weight: 500;
   font-size: 1rem;
-  padding: 0.5rem 0;
-  transition: all 0.3s ease;
   position: relative;
-}
-
-.navbar-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #5b9fd8 0%, #7bb3e0 100%);
-  transition: width 0.3s ease;
 }
 
 .navbar-link:hover {
   color: #5b9fd8;
 }
 
-.navbar-link:hover::after {
-  width: 100%;
-}
-
-/* CTA Button - Matching Blue Theme */
+/* ===== CTA ===== */
 .navbar-cta {
   flex-shrink: 0;
 }
 
 .enquiry-btn {
-  display: inline-block;
   padding: 0.85rem 2.2rem;
-  background: linear-gradient(135deg, #5b9fd8 0%, #4a8bc2 100%);
-  color: white;
-  text-decoration: none;
+  background: linear-gradient(135deg, #5b9fd8, #4a8bc2);
+  color: #fff;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(91, 159, 216, 0.4);
+  text-decoration: none;
 }
 
-.enquiry-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(91, 159, 216, 0.5);
-  background: linear-gradient(135deg, #6baee3 0%, #5b9fd8 100%);
-}
-
-.enquiry-btn:active {
-  transform: translateY(0);
-}
-
-/* Hamburger Menu */
+/* ===== HAMBURGER ===== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -137,45 +85,24 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 10px;
-  z-index: 1001;
-  transition: transform 0.3s ease;
-}
-
-.hamburger:active {
-  transform: scale(0.95);
 }
 
 .hamburger span {
   width: 28px;
   height: 3px;
-  background: #e8eef5;
+  background: #fff;
   border-radius: 3px;
-  transition: all 0.3s ease;
 }
 
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(8px, -8px);
-}
-
-/* Responsive Design */
-@media screen and (max-width: 968px) {
+/* ===== MOBILE MENU ===== */
+@media (max-width: 968px) {
   .navbar-container {
-    padding: 0 1.5rem;
     height: 75px;
+    padding: 0 1.5rem;
   }
 
   .navbar-logo img {
-    height: 100px;
-    max-width: 180px;
+    height: 95px;
   }
 
   .hamburger {
@@ -187,335 +114,77 @@
     top: 75px;
     left: 0;
     right: 0;
-    flex-direction: column;
     background: #1a2332;
-    padding: 2rem;
-    gap: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+    padding: 1.8rem;
+    gap: 1.2rem;
     transform: translateX(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    max-height: calc(100vh - 75px);
-    overflow-y: auto;
+    transition: 0.3s ease;
   }
 
   .navbar-menu.active {
     transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .navbar-item {
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-  }
-
-  .navbar-menu.active .navbar-item {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Staggered animation for menu items */
-  .navbar-menu.active .navbar-item:nth-child(1) { transition-delay: 0.1s; }
-  .navbar-menu.active .navbar-item:nth-child(2) { transition-delay: 0.15s; }
-  .navbar-menu.active .navbar-item:nth-child(3) { transition-delay: 0.2s; }
-  .navbar-menu.active .navbar-item:nth-child(4) { transition-delay: 0.25s; }
-  .navbar-menu.active .navbar-item:nth-child(5) { transition-delay: 0.3s; }
-  .navbar-menu.active .navbar-item:nth-child(6) { transition-delay: 0.35s; }
-
-  .navbar-link {
-    display: block;
-    padding: 0.75rem 0;
-    font-size: 1.1rem;
-  }
-
-  .navbar-link::after {
-    display: none;
-  }
-
-  .navbar-link:active {
-    color: #5b9fd8;
-    transform: scale(0.98);
   }
 
   .navbar-cta {
     display: none;
   }
-
-  .navbar-menu.active .navbar-cta {
-    display: block;
-    width: 100%;
-  }
-
-  .navbar-menu.active .enquiry-btn {
-    width: 100%;
-    text-align: center;
-    padding: 0.9rem 2rem;
-    font-size: 1rem;
-  }
-
-  /* Disable hover effects on mobile */
-  .navbar-logo a:hover {
-    transform: none;
-  }
-
-  .navbar-logo a:active {
-    transform: scale(0.97);
-  }
-
-  .enquiry-btn:hover {
-    transform: none;
-    box-shadow: 0 4px 15px rgba(91, 159, 216, 0.4);
-  }
-
-  .enquiry-btn:active {
-    transform: scale(0.98);
-  }
-
-  /* Prevent body scroll when menu is open */
-  body.menu-open {
-    overflow: hidden;
-  }
 }
 
-@media screen and (max-width: 768px) {
+/* ===== SMALLER SCREENS ===== */
+@media (max-width: 768px) {
   .navbar-container {
-    padding: 0 1.25rem;
     height: 70px;
-  }
-
-  .navbar-logo img {
-    height: 85px;
-    max-width: 170px;
-  }
-
-  .hamburger {
-    padding: 8px;
-  }
-
-  .hamburger span {
-    width: 26px;
-    height: 2.5px;
-    gap: 4.5px;
   }
 
   .navbar-menu {
     top: 70px;
-    padding: 1.75rem 1.5rem;
-    gap: 1.25rem;
-    max-height: calc(100vh - 70px);
-  }
-
-  .navbar-link {
-    padding: 0.65rem 0;
-    font-size: 1.05rem;
-  }
-
-  .navbar-menu.active .enquiry-btn {
-    padding: 0.85rem 1.8rem;
-    font-size: 0.95rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .navbar-container {
-    padding: 0 1rem;
-    height: 65px;
   }
 
   .navbar-logo img {
-    height: 70px;
-    max-width: 150px;
+    height: 85px;
   }
+}
 
-  .hamburger {
-    padding: 6px;
-  }
-
-  .hamburger span {
-    width: 24px;
-    height: 2px;
-    gap: 4px;
+@media (max-width: 480px) {
+  .navbar-container {
+    height: 65px;
   }
 
   .navbar-menu {
     top: 65px;
-    padding: 1.5rem 1.25rem;
-    gap: 1rem;
-    max-height: calc(100vh - 65px);
-  }
-
-  .navbar-link {
-    padding: 0.6rem 0;
-    font-size: 1rem;
-  }
-
-  .navbar-menu.active .enquiry-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.9rem;
-    border-radius: 40px;
-  }
-}
-
-/* Extra small devices */
-@media screen and (max-width: 360px) {
-  .navbar-container {
-    padding: 0 0.85rem;
-    height: 60px;
   }
 
   .navbar-logo img {
-    height: 60px;
-    max-width: 130px;
-  }
-
-  .hamburger span {
-    width: 22px;
-  }
-
-  .navbar-menu {
-    top: 60px;
-    padding: 1.25rem 1rem;
-    max-height: calc(100vh - 60px);
-  }
-
-  .navbar-link {
-    font-size: 0.95rem;
-  }
-
-  .navbar-menu.active .enquiry-btn {
-    padding: 0.75rem 1.25rem;
-    font-size: 0.85rem;
-  }
-}
-
-/* Scroll Effect - Slightly Lighter on Scroll */
-.navbar.scrolled {
-  background: #1f2937;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-}
-
-.navbar.scrolled .navbar-container {
-  height: 75px;
-}
-
-.navbar.scrolled .navbar-logo img {
-  height: 100px;
-}
-
-@media screen and (max-width: 968px) {
-  .navbar.scrolled .navbar-container {
     height: 70px;
   }
-
-  .navbar.scrolled .navbar-logo img {
-    height: 90px;
-  }
 }
 
-@media screen and (max-width: 768px) {
-  .navbar.scrolled .navbar-container {
-    height: 65px;
-  }
-
-  .navbar.scrolled .navbar-logo img {
-    height: 75px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .navbar.scrolled .navbar-container {
-    height: 60px;
-  }
-
-  .navbar.scrolled .navbar-logo img {
-    height: 65px;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .navbar.scrolled .navbar-container {
-    height: 55px;
-  }
-
-  .navbar.scrolled .navbar-logo img {
-    height: 55px;
-  }
-}
-
-/* Add spacing to body to prevent content hiding under navbar */
+/* ===== SPACING FIX (IMPORTANT) ===== */
 body {
-  padding-top: 85px;
+  padding-top: 95px; /* prevents overlap + small bottom space */
+  overflow-x: hidden;
 }
 
-@media screen and (max-width: 968px) {
+@media (max-width: 968px) {
+  body {
+    padding-top: 85px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
   body {
     padding-top: 75px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    padding-top: 70px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  body {
-    padding-top: 65px;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  body {
-    padding-top: 60px;
-  }
-}
-
-/* Smooth scrolling for the whole page */
+/* ===== SMOOTH SCROLL ===== */
 html {
   scroll-behavior: smooth;
-}
-
-/* Optional: Add subtle animation to logo */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.navbar-logo {
-  animation: fadeIn 0.6s ease;
-}
-
-/* Prevent horizontal scroll on mobile */
-body {
-  overflow-x: hidden;
-}
-
-/* Smooth menu animation */
-.navbar-menu {
-  will-change: transform, opacity;
-}
-
-/* Accessibility improvements for mobile */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  html {
-    scroll-behavior: auto;
-  }
 }
