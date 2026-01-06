@@ -1,134 +1,90 @@
-/* ================= ROOT HERO SECTION ================= */
+/* Hero Services Section CSS */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hero Services Section */
 .hero-services {
   width: 100%;
-  min-height: 100vh;
   background: linear-gradient(180deg, #0f0f1e 0%, #1a1a2e 100%);
   color: #e0e0e0;
-
-  /* 🔥 Prevent navbar overlap */
-  margin-top: 90px;
-
-  /* 🔥 Prevent bottom cut */
-  padding-bottom: 4rem;
+  padding-top: 100px; /* Adjust for navbar */
+  padding-bottom: 80px; /* Extra bottom spacing */
 }
 
-/* Responsive navbar offset */
-@media (max-width: 768px) {
-  .hero-services {
-    margin-top: 80px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-services {
-    margin-top: 70px;
-  }
-}
-
-/* ================= HERO CONTAINER ================= */
+/* Hero Content */
 .hero-content {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 5rem 3rem;
+  padding: 6rem 3rem 3rem;
   text-align: center;
 }
 
-/* ================= HERO BADGE ================= */
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.6rem 1.6rem;
+  gap: 0.5rem;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  padding: 0.6rem 1.5rem;
   border-radius: 50px;
-  background: rgba(0, 217, 255, 0.12);
-  border: 1px solid rgba(0, 217, 255, 0.35);
   margin-bottom: 2rem;
+  animation: fadeInDown 0.8s ease;
 }
 
 .badge-icon {
   font-size: 1.2rem;
+  animation: pulse 2s infinite;
 }
 
 .badge-text {
-  font-size: 0.95rem;
-  font-weight: 600;
   color: #00d9ff;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
-/* ================= HERO TITLE ================= */
 .hero-title {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   color: #ffffff;
+  animation: fadeInUp 0.8s ease;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #00d9ff, #00b8d4);
+  background: linear-gradient(135deg, #00d9ff 0%, #00b8d4 50%, #0096a8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* ================= HERO DESCRIPTION ================= */
 .hero-description {
-  max-width: 900px;
-  margin: 0 auto 3rem;
   font-size: 1.25rem;
   line-height: 1.8;
   color: #b0b0b0;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  animation: fadeInUp 0.8s ease 0.2s backwards;
 }
 
-/* ================= HERO BUTTONS ================= */
-.hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 4rem;
-  flex-wrap: wrap;
-}
-
-.primary-btn,
-.secondary-btn {
-  padding: 0.9rem 2.2rem;
-  font-size: 1rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.primary-btn {
-  background: linear-gradient(135deg, #00d9ff, #00b8d4);
-  color: #000;
-}
-
-.primary-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 217, 255, 0.35);
-}
-
-.secondary-btn {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-}
-
-.secondary-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* ================= HERO STATS ================= */
+/* Hero Stats */
 .hero-stats {
   display: flex;
   justify-content: center;
   gap: 4rem;
+  margin-top: 4rem;
+  animation: fadeInUp 0.8s ease 0.4s backwards;
   flex-wrap: wrap;
-  padding-bottom: 3rem; /* 🔥 last content safe */
 }
 
 .stat-item {
-  min-width: 140px;
   text-align: center;
+  min-width: 120px;
 }
 
 .stat-number {
@@ -137,64 +93,333 @@
   background: linear-gradient(135deg, #00d9ff, #00b8d4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .stat-label {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #808080;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1200px) {
-  .hero-title {
-    font-size: 3.4rem;
+/* Services Section */
+.services-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 5rem 3rem 3rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #808080;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+  border: 1px solid rgba(0, 217, 255, 0.1);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
+  background: linear-gradient(135deg, rgba(26, 26, 46, 1) 0%, rgba(22, 33, 62, 1) 100%);
+}
+
+.service-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+}
+
+.service-link {
+  color: #00d9ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.service-link:hover {
+  color: #00b8d4;
+  transform: translateX(5px);
+}
+
+/* Training Section */
+.training-section {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(0, 184, 212, 0.05) 100%);
+  border-top: 1px solid rgba(0, 217, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+  padding: 6rem 3rem 4rem;
+  margin-top: 5rem;
+}
+
+.training-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.training-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.training-badge {
+  display: inline-block;
+  background: rgba(0, 217, 255, 0.1);
+  color: #00d9ff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.training-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.training-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #b0b0b0;
+  margin-bottom: 2rem;
+}
+
+.training-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+.training-features li {
+  font-size: 1.05rem;
+  color: #e0e0e0;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.training-features li:last-child {
+  border-bottom: none;
+}
+
+.training-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #00d9ff 0%, #00b8d4 100%);
+  color: #1a1a2e;
+  padding: 1rem 3rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+  width: max-content;
+}
+
+.training-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 217, 255, 0.5);
+}
+
+.training-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.visual-card {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.visual-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+}
+
+.visual-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.visual-card h4 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.visual-card p {
+  font-size: 0.9rem;
+  color: #808080;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 968px) {
-  .hero-content {
-    padding: 4rem 2rem;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .hero-title {
-    font-size: 2.8rem;
-  }
-
-  .hero-description {
-    font-size: 1.15rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.3rem;
-  }
-
-  .hero-buttons {
-    gap: 1rem;
-  }
-
-  .hero-stats {
-    gap: 2rem;
-  }
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
-@media (max-width: 480px) {
-  .hero-content {
-    padding: 3.5rem 1.2rem;
-  }
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .hero-title { font-size: 3.5rem; }
+  .training-content { gap: 3rem; }
+}
 
-  .hero-title {
-    font-size: 1.9rem;
-  }
+@media screen and (max-width: 968px) {
+  .hero-content { padding: 4rem 2rem; }
+  .hero-title { font-size: 2.8rem; }
+  .hero-description { font-size: 1.15rem; }
+  .hero-stats { gap: 2.5rem; }
+  .stat-number { font-size: 2.5rem; }
+  .services-section { padding: 4rem 2rem; }
+  .section-title { font-size: 2.5rem; }
+  .services-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .training-content { grid-template-columns: 1fr; gap: 3rem; padding: 0 2rem; }
+  .training-visual { order: -1; }
+  .training-title { font-size: 2.4rem; }
+}
 
-  .hero-description {
-    font-size: 1rem;
-  }
+@media screen and (max-width: 768px) {
+  .hero-content { padding: 3.5rem 1.5rem; }
+  .hero-title { font-size: 2.2rem; margin-bottom: 1.2rem; }
+  .hero-description { font-size: 1.05rem; margin-bottom: 2.5rem; }
+  .hero-stats { flex-direction: column; gap: 2rem; margin-top: 3rem; }
+  .stat-number { font-size: 2.2rem; }
+  .stat-label { font-size: 0.9rem; }
+  .services-section { padding: 3.5rem 1.5rem; }
+  .section-title { font-size: 2.2rem; }
+  .section-subtitle { font-size: 1.05rem; }
+  .services-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .service-card { padding: 2rem; }
+  .service-icon { font-size: 3rem; margin-bottom: 1.2rem; }
+  .service-title { font-size: 1.35rem; }
+  .service-description { font-size: 0.95rem; }
+  .training-section { padding: 4rem 0; margin-top: 3.5rem; }
+  .training-badge { font-size: 0.85rem; padding: 0.4rem 1rem; }
+  .training-title { font-size: 2rem; margin-bottom: 1.2rem; }
+  .training-description { font-size: 1rem; margin-bottom: 1.5rem; }
+  .training-features li { font-size: 0.95rem; padding: 0.7rem 0; }
+  .training-cta { padding: 0.9rem 2.5rem; font-size: 1rem; width: 100%; text-align: center; }
+  .training-visual { grid-template-columns: 1fr; gap: 1.2rem; }
+  .visual-card { padding: 1.5rem; }
+  .visual-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+  .visual-card h4 { font-size: 1.1rem; }
+  .visual-card p { font-size: 0.85rem; }
+}
 
-  .stat-number {
-    font-size: 2.3rem;
-  }
+@media screen and (max-width: 480px) {
+  .hero-content { padding: 3rem 1.25rem; }
+  .hero-title { font-size: 1.85rem; line-height: 1.25; }
+  .hero-description { font-size: 0.95rem; line-height: 1.5; margin-bottom: 2rem; }
+  .hero-stats { gap: 1.8rem; margin-top: 2.5rem; }
+  .stat-number { font-size: 1.9rem; }
+  .stat-label { font-size: 0.85rem; letter-spacing: 0.5px; }
+  .services-section { padding: 3rem 1.25rem; }
+  .section-title { font-size: 1.85rem; line-height: 1.3; }
+  .section-subtitle { font-size: 0.95rem; }
+  .services-grid { gap: 1.25rem; }
+  .service-card { padding: 1.75rem; border-radius: 16px; }
+  .service-icon { font-size: 2.8rem; margin-bottom: 1rem; }
+  .service-title { font-size: 1.25rem; margin-bottom: 0.8rem; }
+  .service-description { font-size: 0.9rem; margin-bottom: 1.2rem; }
+  .training-section { padding: 3.5rem 0; margin-top: 3rem; }
+  .training-badge { font-size: 0.8rem; padding: 0.4rem 0.9rem; }
+  .training-title { font-size: 1.75rem; line-height: 1.25; }
+  .training-description { font-size: 0.95rem; margin-bottom: 1.25rem; }
+  .training-features li { font-size: 0.9rem; padding: 0.6rem 0; }
+  .training-cta { padding: 0.85rem 2rem; font-size: 0.95rem; border-radius: 25px; }
+  .visual-card { padding: 1.35rem; border-radius: 12px; }
+  .visual-icon { font-size: 2rem; }
+  .visual-card h4 { font-size: 1.05rem; }
+  .visual-card p { font-size: 0.8rem; }
+}
+
+@media screen and (max-width: 360px) {
+  .hero-title { font-size: 1.65rem; }
+  .hero-description { font-size: 0.9rem; }
+  .section-title { font-size: 1.65rem; }
+  .stat-number { font-size: 1.7rem; }
+  .service-card { padding: 1.5rem; }
+  .training-title { font-size: 1.6rem; }
 }
