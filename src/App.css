@@ -1,10 +1,14 @@
 .App {
   text-align: center;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  max-width: 90vw;
+  object-fit: contain;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -22,10 +26,24 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 2rem 1.5rem;
 }
 
 .App-link {
   color: #61dafb;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+
+.App-link:hover {
+  color: #4fc3f7;
+  background-color: rgba(97, 218, 251, 0.1);
+}
+
+.App-link:active {
+  transform: scale(0.98);
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +52,116 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Mobile Optimizations */
+@media screen and (max-width: 768px) {
+  .App-logo {
+    height: 35vmin;
+    max-height: 200px;
+  }
+
+  .App-header {
+    padding: 1.5rem 1.25rem;
+    font-size: calc(12px + 1.8vmin);
+  }
+
+  .App-link {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+  }
+
+  /* Disable hover effects on mobile */
+  .App-link:hover {
+    color: #61dafb;
+    background-color: transparent;
+  }
+
+  .App-link:active {
+    color: #4fc3f7;
+    background-color: rgba(97, 218, 251, 0.15);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .App-logo {
+    height: 30vmin;
+    max-height: 150px;
+  }
+
+  .App-header {
+    padding: 1.25rem 1rem;
+    font-size: calc(14px + 1.5vmin);
+    min-height: 100svh; /* Use svh for better mobile browser support */
+  }
+
+  .App-link {
+    padding: 0.45rem 0.65rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .App-logo {
+    height: 28vmin;
+    max-height: 130px;
+  }
+
+  .App-header {
+    padding: 1rem 0.85rem;
+    font-size: calc(14px + 1.2vmin);
+  }
+
+  .App-link {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media screen and (max-width: 968px) and (orientation: landscape) {
+  .App-logo {
+    height: 25vmin;
+    max-height: 120px;
+  }
+
+  .App-header {
+    min-height: 100vh;
+    padding: 1rem;
+    font-size: calc(12px + 1.5vmin);
+  }
+}
+
+/* Accessibility - Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .App-logo {
+    animation: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Prevent text from being too small on any device */
+@media screen and (max-width: 320px) {
+  .App-header {
+    font-size: 16px;
+  }
+
+  .App-link {
+    font-size: 14px;
+  }
+}
+
+/* High DPI / Retina display optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .App-logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
