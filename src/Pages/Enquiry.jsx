@@ -15,11 +15,53 @@ const Enquiry = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch(
+      `${process.env.REACT_APP_API_URL}/api/enquiry`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    if (!res.ok) {
+      throw new Error("Request failed");
+    }
+
+    alert("Enquiry submitted successfully ✅");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      budget: "",
+      message: "",
+    });
+  } catch (error) {
+    console.error(error);
+    alert("Server not reachable ❌");
+  }
+};
+
 
     try {
-      const res = await fetch("https://codekraft-backend.onrender.com/", {
+     const res = await fetch(
+  "https://codekraft-backend.onrender.com/api/enquiry",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  }
+   );
+   , {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
