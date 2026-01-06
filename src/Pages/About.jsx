@@ -63,9 +63,6 @@ const About = () => {
 
       </div>
       <div>
-              <h3>Mail at</h3>
-              <span>careerscodekraft@gmail.com</span>
-            </div>
     </section>
   );
 };
