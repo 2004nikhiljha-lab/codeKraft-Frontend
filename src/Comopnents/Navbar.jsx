@@ -10,14 +10,19 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // ✅ Close menu after clicking any link (mobile fix)
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
 
         {/* Logo */}
         <div className="navbar-logo">
-          <Link to="/">
-            <img src={logo} alt="" />
+          <Link to="/" onClick={closeMenu}>
+            <img src={logo} alt="Logo" />
           </Link>
         </div>
 
@@ -34,25 +39,37 @@ const Navbar = () => {
         {/* Menu */}
         <ul className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
           <li className="navbar-item">
-            <Link to="/" className="navbar-link">Home</Link>
+            <Link to="/" className="navbar-link" onClick={closeMenu}>
+              Home
+            </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/projects" className="navbar-link">Projects</Link>
+            <Link to="/projects" className="navbar-link" onClick={closeMenu}>
+              Projects
+            </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/services" className="navbar-link">Services</Link>
+            <Link to="/services" className="navbar-link" onClick={closeMenu}>
+              Services
+            </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/about" className="navbar-link">About Us</Link>
+            <Link to="/about" className="navbar-link" onClick={closeMenu}>
+              About Us
+            </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/pricing" className="navbar-link">Pricing</Link>
+            <Link to="/pricing" className="navbar-link" onClick={closeMenu}>
+              Pricing
+            </Link>
           </li>
         </ul>
 
         {/* CTA */}
         <div className="navbar-cta">
-          <Link to="/enquiry" className="enquiry-btn">Enquiry</Link>
+          <Link to="/enquiry" className="enquiry-btn" onClick={closeMenu}>
+            Enquiry
+          </Link>
         </div>
 
       </div>
@@ -61,3 +78,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
