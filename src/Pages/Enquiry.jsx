@@ -15,73 +15,34 @@ const Enquiry = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  try {
-    const res = await fetch(
-      `${process.env.REACT_APP_API_URL}/api/enquiry`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }
-    );
-
-    if (!res.ok) {
-      throw new Error("Request failed");
-    }
-
-    alert("Enquiry submitted successfully ✅");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      budget: "",
-      message: "",
-    });
-  } catch (error) {
-    console.error(error);
-    alert("Server not reachable ❌");
-  }
-};
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     try {
-     const res = await fetch(
-  "https://codekraft-backend.onrender.com/api/enquiry",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  }
-   );
-   , {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://codekraft-backend.onrender.com/api/enquiry",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
-      if (res.ok) {
-        alert("Enquiry submitted successfully ✅");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          budget: "",
-          message: "",
-        });
-      } else {
-        alert("Failed to submit enquiry ❌");
+      if (!res.ok) {
+        throw new Error("Request failed");
       }
+
+      alert("Enquiry submitted successfully ✅");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        budget: "",
+        message: "",
+      });
     } catch (error) {
       console.error(error);
       alert("Server not reachable ❌");
@@ -91,9 +52,8 @@ const Enquiry = () => {
   return (
     <section className="enquiry-section">
       <div className="enquiry-container">
-
         <div className="enquiry-info">
-          <h2>Let’s Discuss Your Project</h2>
+          <h2>Let's Discuss Your Project</h2>
           <p>
             Looking for a custom solution or special discount?  
             Share your requirements and our team will reach out to you.
