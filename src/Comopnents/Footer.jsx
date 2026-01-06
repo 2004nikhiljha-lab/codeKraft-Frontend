@@ -117,13 +117,14 @@ const Footer = () => {
                 <li className="contact-item">
                   <span className="contact-icon">📧</span>
                   <a href="mailto:niktechproject@gmail.com" className="footer-link">
-                    codekraftprojects@gmail.com
+                    codekraft@outlook.com
                   </a>
                 </li>
                 <li className="contact-item">
                   <span className="contact-icon">📞</span>
                   <a href="tel:+919717917758" className="footer-link">
                     +91 9717917758
+                    +91 9355776245
                   </a>
                 </li>
                 <li className="contact-item">
@@ -137,7 +138,7 @@ const Footer = () => {
                   <span>💬Message at</span>
                 </li>
                 <li className="contact-item">
-                  <span>📧careerscodekraft@gmail.com</span>
+                  <span>📧codekraft@outlook.com</span>
                 </li>
               </ul>
             </div>
