@@ -1,0 +1,173 @@
+.pricing-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 8%;
+  background: linear-gradient(180deg, #000000, #0b1a2e, #000000);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Header */
+.pricing-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 70px;
+}
+
+.pricing-header h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.pricing-header p {
+  font-size: 1.1rem;
+  color: #cfd8dc;
+}
+
+/* Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+/* Card */
+.pricing-card {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 22px;
+  padding: 45px 30px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.8);
+}
+
+/* Popular */
+.pricing-card.popular {
+  border: 2px solid #00c6ff;
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Price */
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.price span {
+  display: block;
+  font-size: 0.8rem;
+  color: #b0bec5;
+  margin-top: 5px;
+}
+
+/* Features */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.pricing-card li {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: #e0e0e0;
+}
+
+/* Button */
+.pricing-btn {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pricing-btn:hover {
+  opacity: 0.9;
+}
+
+/* Enquiry Section */
+.pricing-enquiry {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 50px 30px;
+  border-radius: 25px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+}
+
+.pricing-enquiry h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.pricing-enquiry p {
+  font-size: 1rem;
+  color: #cfd8dc;
+  margin-bottom: 25px;
+}
+
+.enquiry-btn {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  border: none;
+  padding: 14px 36px;
+  border-radius: 35px;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.enquiry-btn:hover {
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 80px 6%;
+  }
+
+  .pricing-header h2 {
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 480px) {
+  .pricing-card {
+    padding: 35px 20px;
+  }
+
+  .pricing-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .price {
+    font-size: 1.8rem;
+  }
+}
